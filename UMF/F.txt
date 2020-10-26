@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace UMF
+{
+    class F
+    {
+        private int n;
+        private double R;
+        private double a;
+        public F(int n, double R, double a)
+        {
+            this.n = n;
+            this.R = R;
+            this.a = a;
+        } 
+        public double f(double x, double t)
+        {
+            double summ = 0;
+            for (int i = 1; i < n; i++)
+            {
+                summ += R*(2*Math.Sin(Math.PI*i/2)-Math.PI*i*Math.Cos(Math.PI*i/2))*Math.Exp(-Math.Pow((Math.PI*i*a/R),2)*t)*Math.Sin(Math.PI*i*x/R)*(1/x)/(Math.PI*Math.PI*i*i);
+            }
+            return summ;
+        }
+ 
+    }
+}
